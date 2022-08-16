@@ -1,4 +1,4 @@
-package Server;
+package lk.playtech.chatApp.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
