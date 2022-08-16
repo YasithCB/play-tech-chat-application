@@ -10,37 +10,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="955.0" stylesheets="@../asset/style/css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playtech.chatApp.controller.LoginFormController">
+<AnchorPane fx:id="apnMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playtech.chatApp.controller.LoginFormController">
    <children>
-      <AnchorPane fx:id="apnWelcome" prefHeight="609.0" prefWidth="955.0" style="-fx-background-color: #222222;">
+      <AnchorPane fx:id="apnWelcome" layoutX="-17.0" prefHeight="611.0" prefWidth="983.0" style="-fx-background-color: #222222;">
          <children>
-            <Label fx:id="lblLogo" layoutX="451.0" layoutY="295.0" prefHeight="21.0" prefWidth="69.0" text="PlayTech" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="imgWelcome" fitHeight="610.0" fitWidth="334.0" layoutX="571.0" layoutY="1.0" opacity="0.3" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fx:id="lblLogo" fitHeight="150.0" fitWidth="200.0" layoutX="393.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../asset/image/descubre.png" />
+                  <Image url="@../../../../asset/image/logo.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblNewUser" alignment="CENTER" contentDisplay="CENTER" layoutX="634.0" layoutY="447.0" prefHeight="19.0" prefWidth="173.0" text="New User?" textFill="WHITE">
+            <ImageView fx:id="imgWelcome" fitHeight="610.0" fitWidth="334.0" layoutX="563.0" layoutY="163.0" opacity="0.74" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../../asset/image/logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblNewUser" alignment="CENTER" contentDisplay="CENTER" layoutX="644.0" layoutY="448.0" opacity="0.74" prefHeight="19.0" prefWidth="173.0" text="New User?" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnSwap" buttonType="RAISED" layoutX="646.0" layoutY="486.0" onAction="#btnSwapTabOnAction" prefHeight="42.0" prefWidth="148.0" styleClass="button2" stylesheets="@../../../../../../Sem%201/Sem1FinalProject/T4Me/src/assert/css/css.css" text="Register Now" textFill="WHITE">
+            <JFXButton fx:id="btnSwap" buttonType="RAISED" layoutX="656.0" layoutY="487.0" onAction="#btnSwapTabOnAction" prefHeight="42.0" prefWidth="148.0" styleClass="button2" stylesheets="@../../../../asset/style/css.css" text="Register Now" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <Label fx:id="lblLetsChat" alignment="CENTER" contentDisplay="CENTER" layoutX="640.0" layoutY="247.0" opacity="0.62" prefHeight="19.0" prefWidth="173.0" text="L e t s  C h a t" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apnLogin" prefHeight="610.0" prefWidth="955.0" visible="false">
+      <AnchorPane fx:id="apnLogin" prefHeight="611.0" prefWidth="976.0" visible="false">
          <children>
             <ImageView fitHeight="610.0" fitWidth="955.0" layoutY="-1.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../../../../Sem%201/Sem1FinalProject/T4Me/src/assert/images/thumb2-white-wavy-background-4k-abstract-waves-creative-white-backgrounds.jpg" />
+                  <Image url="@../../../../asset/image/loginScreen.jpg" />
                </image>
             </ImageView>
             <Label layoutX="195.0" layoutY="78.0" text="SIGN UP">
@@ -50,7 +55,7 @@
             </Label>
             <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="121.0" layoutY="284.0" prefHeight="25.0" prefWidth="233.0" promptText="User Name" />
             <JFXPasswordField fx:id="pw" labelFloat="true" layoutX="121.0" layoutY="349.0" prefHeight="25.0" prefWidth="239.0" promptText="Password" />
-            <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="157.0" layoutY="491.0" prefHeight="42.0" prefWidth="166.0" styleClass="buttonMenu" text="Sign Up" textFill="WHITE">
+            <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="157.0" layoutY="491.0" prefHeight="42.0" prefWidth="166.0" styleClass="buttonMenu" stylesheets="@../../../../asset/style/css.css" text="Sign Up" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -62,7 +67,7 @@
             </Label>
             <JFXTextField fx:id="txtUserNameOnReg" labelFloat="true" layoutX="597.0" layoutY="202.0" prefHeight="25.0" prefWidth="233.0" promptText="User Name" />
 
-            <JFXButton fx:id="btnReg" buttonType="RAISED" layoutX="640.0" layoutY="491.0" onAction="#btnRegOnAction" prefHeight="42.0" prefWidth="166.0" styleClass="buttonMenu" stylesheets="@../asset/style/css.css" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btnReg" buttonType="RAISED" layoutX="640.0" layoutY="491.0" onAction="#btnRegOnAction" prefHeight="42.0" prefWidth="166.0" styleClass="buttonMenu" stylesheets="@../../../../asset/style/css.css" text="Register" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -92,10 +97,15 @@
             <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="121.0" layoutY="349.0" prefHeight="25.0" prefWidth="233.0" />
             <ImageView fx:id="imageShowPassword" fitHeight="25.0" fitWidth="16.0" layoutX="338.0" layoutY="354.0" opacity="0.69" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../asset/image/eye.png" />
+                  <Image url="@../../../../asset/image/eye.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="922.0" layoutY="8.0" prefHeight="0.0" prefWidth="3.0" styleClass="buttonClose" stylesheets="@../../../../asset/style/css.css" text="X">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

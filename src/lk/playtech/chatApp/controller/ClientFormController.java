@@ -32,11 +32,11 @@ import java.util.Scanner;
 
 public class ClientFormController extends Thread{
     public AnchorPane apnMain;
-    public JFXTextArea txtChatArea;
     public JFXTextField txtMsg;
     public JFXButton btnSend;
     public Label lblUserName;
     public VBox vbox;
+    public JFXButton btnClose;
     //private
     BufferedReader reader;
     PrintWriter writer;
@@ -49,7 +49,6 @@ public class ClientFormController extends Thread{
         lblUserName.setText(String.valueOf(userName));
         try {
             socket = new Socket("localhost", 5001);
-            System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
 
@@ -61,6 +60,9 @@ public class ClientFormController extends Thread{
         btnSend.setOnMouseClicked(event -> {
             sendMsg();
         });
+        btnClose.setOnMouseClicked(event -> {
+            System.exit(0);
+        });
     }
 
     private void sendMsg() {
@@ -71,7 +73,6 @@ public class ClientFormController extends Thread{
 
         if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
             System.exit(0);
-
         }
     }
 
@@ -79,7 +80,6 @@ public class ClientFormController extends Thread{
     public void run() {
         try {
             while (true) {
-
 
                 String msg = reader.readLine();
                 String[] tokens = msg.split(" ");
@@ -91,22 +91,17 @@ public class ClientFormController extends Thread{
                     fullMsg.append(tokens[i]);
                 }
 
-
                 String[] msgToAr = msg.split(" ");
                 String st = "";
                 for (int i = 0; i < msgToAr.length - 1; i++) {
                     st += msgToAr[i + 1] + " ";
                 }
-//======================================================================
-
 
                 Text text = new Text(st);
                 String firstChars = "";
                 if (st.length() > 3) {
                     firstChars = st.substring(0, 3);
-
                 }
-
 
                 if (firstChars.equalsIgnoreCase("img")) {
                     //for the Images
@@ -164,8 +159,6 @@ public class ClientFormController extends Thread{
                     TextFlow flow = new TextFlow(tempFlow);
 
                     HBox hBox = new HBox(12); //12
-
-                    //=================================================
 
 
                     if (!cmd.equalsIgnoreCase(lblUserName.getText() + ":")) {

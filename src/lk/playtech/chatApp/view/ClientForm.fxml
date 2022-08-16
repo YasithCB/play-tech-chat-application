@@ -10,10 +10,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="955.0" stylesheets="@../asset/style/css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playtech.chatApp.controller.ClientFormController">
+<AnchorPane fx:id="apnMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playtech.chatApp.controller.ClientFormController">
    <children>
+      <ImageView fitHeight="610.0" fitWidth="955.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../asset/image/loginScreen.jpg" />
+         </image>
+      </ImageView>
       <JFXTextField fx:id="txtMsg" layoutX="65.0" layoutY="550.0" onKeyReleased="#txtSendOnKeyReleased" prefHeight="25.0" prefWidth="751.0" />
-      <JFXButton fx:id="btnSend" layoutX="822.0" layoutY="550.0" prefHeight="25.0" prefWidth="92.0" text="Send">
+      <JFXButton fx:id="btnSend" layoutX="822.0" layoutY="550.0" prefHeight="25.0" prefWidth="92.0" styleClass="btn2" stylesheets="@../../../../asset/style/css.css" text="Send">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,19 +27,34 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label fx:id="lblUserName" layoutX="65.0" layoutY="25.0" prefHeight="17.0" prefWidth="153.0" text="Yasith">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="79.0" layoutY="22.0" onMouseClicked="#addImgOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../asset/image/face.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblUserName" layoutX="109.0" layoutY="24.0" prefHeight="17.0" prefWidth="153.0" text="Yasith">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="47.0" layoutY="52.0" prefHeight="484.0" prefWidth="862.0">
+      <ScrollPane layoutX="47.0" layoutY="52.0" opacity="0.67" prefHeight="484.0" prefWidth="862.0">
          <content>
-            <VBox fx:id="vbox" prefHeight="558.0" prefWidth="845.0" />
+            <VBox fx:id="vbox" prefHeight="558.0" prefWidth="837.0" />
          </content>
       </ScrollPane>
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="795.0" layoutY="554.0" onMouseClicked="#addImgOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../asset/image/imgAdd.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="920.0" layoutY="8.0" prefHeight="20.0" prefWidth="20.0" styleClass="buttonClose" stylesheets="@../../../../asset/style/css.css" text="X">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="55.0" fitWidth="150.0" layoutX="403.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../asset/image/logo.png" />
          </image>
       </ImageView>
    </children>

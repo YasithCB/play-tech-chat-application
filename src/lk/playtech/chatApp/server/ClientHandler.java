@@ -29,6 +29,8 @@ public class ClientHandler extends Thread {
             e.printStackTrace();
         }
     }
+
+    @Override
     public void run() {
         try {
             String msg;

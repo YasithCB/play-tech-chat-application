@@ -47,7 +47,9 @@ public class LoginFormController {
     public Label lblForgotPassword;
     public JFXTextField txtPassword;
     public ImageView imageShowPassword;
-    public Label lblLogo;
+    public ImageView lblLogo;
+    public JFXButton btnClose;
+    public Label lblLetsChat;
 
     public static String userName= "";
 
@@ -70,6 +72,12 @@ public class LoginFormController {
                 pw.setVisible(false);
             }
         });
+        btnSignUp.setOnMouseClicked(event -> {
+            signUser();
+        });
+        btnClose.setOnMouseClicked(event -> {
+            System.exit(0);
+        });
     }
 
     private void emergeLogin() {
@@ -81,6 +89,8 @@ public class LoginFormController {
             apnLogin.setVisible(true);
             lblNewUser.setVisible(true);
             btnSwap.setVisible(true);
+            lblLetsChat.setVisible(true);
+            btnClose.setVisible(true);
         });
 
         slide.play();
@@ -91,6 +101,8 @@ public class LoginFormController {
         apnLogin.setVisible(false);
         lblNewUser.setVisible(false);
         btnSwap.setVisible(false);
+        lblLetsChat.setVisible(false);
+        btnClose.setVisible(false);
 
         apnLogin.setTranslateX(477.5);
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5),lblLogo);
@@ -127,10 +139,6 @@ public class LoginFormController {
             lblNewUser.setText("New User?");
             btnSwap.setText("Register Now");
         }
-    }
-
-    public void btnSignUpOnAction(ActionEvent actionEvent) {
-        signUser();
     }
 
     private void signUser() {
@@ -206,7 +214,7 @@ public class LoginFormController {
 
     private void validateReg() {
         // validate uName
-        if (!RegexPatterns.uName.matcher(txtUserNameOnReg.getText()).matches() && !txtUserNameOnReg.getText().equals("")){
+        /*if (!RegexPatterns.uName.matcher(txtUserNameOnReg.getText()).matches() && !txtUserNameOnReg.getText().equals("")){
             btnReg.setDisable(true);
             lblRegexOnReg.setText("User name Invalid");
         }else {
@@ -244,6 +252,6 @@ public class LoginFormController {
                     }
                 }
             }
-        }
+        }*/
     }
 }
