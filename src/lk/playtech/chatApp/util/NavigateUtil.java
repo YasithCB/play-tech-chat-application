@@ -16,7 +16,8 @@ import java.io.IOException;
 
 public class NavigateUtil {
 
-    private static double x,y;
+    private static double x, y;
+
     public static void setUi(AnchorPane apn, String location, String title) throws IOException {
         Stage stage = (Stage) apn.getScene().getWindow();
         Parent root = FXMLLoader.load(NavigateUtil.class.getResource("../view/" + location + ".fxml"));

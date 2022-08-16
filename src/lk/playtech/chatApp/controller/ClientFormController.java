@@ -30,7 +30,7 @@ import java.util.Scanner;
  * project Playtech
  */
 
-public class ClientFormController extends Thread{
+public class ClientFormController extends Thread {
     public AnchorPane apnMain;
     public JFXTextField txtMsg;
     public JFXButton btnSend;
@@ -38,14 +38,14 @@ public class ClientFormController extends Thread{
     public VBox vbox;
     public JFXButton btnClose;
     //private
-    BufferedReader reader;
-    PrintWriter writer;
-    Socket socket;
+    private BufferedReader reader;
+    private PrintWriter writer;
+    private Socket socket;
     private FileChooser fileChooser;
     private File filePath;
 
     public void initialize() {
-        String userName=LoginFormController.userName;
+        String userName = LoginFormController.userName;
         lblUserName.setText(String.valueOf(userName));
         try {
             socket = new Socket("localhost", 5001);
@@ -71,7 +71,7 @@ public class ClientFormController extends Thread{
 
         txtMsg.clear();
 
-        if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
+        if (msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
             System.exit(0);
         }
     }

@@ -12,19 +12,16 @@ import java.util.ArrayList;
  */
 
 public class Server {
-    private static ArrayList<ClientHandler> clients = new ArrayList<ClientHandler>();
+    private static final ArrayList<ClientHandler> clients = new ArrayList<ClientHandler>();
 
     public static void main(String[] args) throws IOException {
 
-        ServerSocket serverSocket=new ServerSocket(5001);
-
+        ServerSocket serverSocket = new ServerSocket(5001);
+        System.out.println("----------Waiting for Client----------");
         Socket socket;
-
-        while (true){
-
-            System.out.println("Waiting for Client ...");
-            socket= serverSocket.accept();
-            System.out.println("Client Connected");
+        while (true) {
+            socket = serverSocket.accept();
+            System.out.println("A new client connected");
             ClientHandler clientThread = new ClientHandler(socket, clients);
             clients.add(clientThread);
             clientThread.start();
