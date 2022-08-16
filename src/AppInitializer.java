@@ -24,7 +24,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("lk/playtech/chatApp/view/LoginForm.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.centerOnScreen();
         primaryStage.initStyle(StageStyle.TRANSPARENT);

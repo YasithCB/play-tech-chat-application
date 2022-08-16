@@ -12,6 +12,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import lk.playtech.chatApp.util.NavigateUtil;
+import lk.playtech.chatApp.util.RegexPatterns;
 
 import java.io.IOException;
 
